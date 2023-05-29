@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
+use App\Http\Controllers\ProductController AS ProductController;
+use App\Http\Controllers\LoginController AS LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +24,6 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
  */
 
 
-Route::apiResource('products', \App\Http\Controllers\ProductController::class);
-
-
+Route::apiResource('products', ProductController::class);
+Route::post('login', [LoginController::class, '__invoke']);
 
